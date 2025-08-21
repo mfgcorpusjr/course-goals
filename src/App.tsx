@@ -1,3 +1,9 @@
+import CourseGoals from "@/components/CourseGoals";
+
 export default function App() {
-  return <div>App</div>;
+  return (
+    <main className="p-8">
+      <CourseGoals />
+    </main>
+  );
 }
