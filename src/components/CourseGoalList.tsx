@@ -1,4 +1,5 @@
 import CourseGoalListItem from "@/components/CourseGoalListItem";
+import Infobox from "@/components/Infobox";
 
 import { type CourseGoal } from "@/types";
 
@@ -13,19 +14,32 @@ export default function CourseGoalList({
 }: CourseGoalListProps) {
   if (courseGoals.length === 0) {
     return (
-      <p className="text-sm text-gray-500 text-center">No course goals yet</p>
+      <Infobox
+        mode="hint"
+        message="You have no course goals yet. Start adding some!"
+      />
     );
   }
 
   return (
-    <div className="flex flex-col md:grid grid-cols-2 gap-4">
-      {courseGoals.map((courseGoal) => (
-        <CourseGoalListItem
-          key={courseGoal.id}
-          courseGoal={courseGoal}
-          onDeleteCourseGoal={onDeleteCourseGoal}
+    <>
+      {courseGoals.length > 4 && (
+        <Infobox
+          mode="warning"
+          message="You're collecting a lot of goals. Don't put too much on your plate."
+          severity="high"
         />
-      ))}
-    </div>
+      )}
+
+      <div className="flex flex-col md:grid grid-cols-2 gap-4">
+        {courseGoals.map((courseGoal) => (
+          <CourseGoalListItem
+            key={courseGoal.id}
+            courseGoal={courseGoal}
+            onDeleteCourseGoal={onDeleteCourseGoal}
+          />
+        ))}
+      </div>
+    </>
   );
 }
