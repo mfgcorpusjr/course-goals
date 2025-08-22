@@ -14,7 +14,7 @@ type WarningInfoboxProps = {
 type InfoboxProps = HintInfoboxProps | WarningInfoboxProps;
 
 export default function Infobox(props: InfoboxProps) {
-  let className = "p-4 space-1 border rounded text-gray-500 text-center";
+  let className = "p-2 space-1 border rounded text-stone-300 text-center";
 
   if (props.mode === "warning") {
     className = twMerge(

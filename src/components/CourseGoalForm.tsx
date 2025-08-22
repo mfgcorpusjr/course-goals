@@ -44,7 +44,7 @@ export default function CourseGoalForm({
 
       <Button
         disabled={title.trim().length === 0 || description.trim().length === 0}
-        className="w-full cursor-pointer"
+        className="w-full cursor-pointer bg-indigo-500 hover:bg-indigo-600 text-stone-100 transition-colors duration-300"
       >
         Add Goal
       </Button>

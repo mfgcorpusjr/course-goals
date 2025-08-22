@@ -7,7 +7,7 @@ import CourseGoalList from "@/components/CourseGoalList";
 
 import { type CourseGoal } from "@/types";
 
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 
 export default function CourseGoals() {
   const [courseGoals, setCourseGoals] = useState<CourseGoal[]>([]);
@@ -23,7 +23,7 @@ export default function CourseGoals() {
   };
 
   return (
-    <Card className="max-w-4xl mx-auto">
+    <Card className="max-w-4xl mx-auto bg-stone-900">
       <CardContent className="space-y-8">
         <Header
           image={{ src: logo, alt: "Course Goals" }}

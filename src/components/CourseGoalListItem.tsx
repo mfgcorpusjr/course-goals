@@ -19,15 +19,17 @@ export default function CourseGoalListItem({
   onDeleteCourseGoal,
 }: CourseGoalListItemProps) {
   return (
-    <Card>
+    <Card className="bg-stone-800 border-none">
       <CardHeader>
-        <CardTitle>{courseGoal.title}</CardTitle>
-        <CardDescription>{courseGoal.description}</CardDescription>
+        <CardTitle className="text-indigo-500">{courseGoal.title}</CardTitle>
+        <CardDescription className="text-stone-300">
+          {courseGoal.description}
+        </CardDescription>
         <CardAction>
           <Button
-            size={"sm"}
-            variant="ghost"
-            className="cursor-pointer"
+            size="sm"
+            variant="outline"
+            className="cursor-pointer bg-stone-100"
             onClick={() => onDeleteCourseGoal(courseGoal.id)}
           >
             Delete

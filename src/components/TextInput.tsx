@@ -9,10 +9,13 @@ type InputProps = {
 export default function TextInput({ label, ...rest }: InputProps) {
   return (
     <div>
-      <label htmlFor={rest.id} className="text-sm font-semibold uppercase">
+      <label
+        htmlFor={rest.id}
+        className="text-sm text-stone-300 font-semibold uppercase"
+      >
         {label}
       </label>
-      <Input {...rest} />
+      <Input {...rest} className="text-stone-100" />
     </div>
   );
 }
